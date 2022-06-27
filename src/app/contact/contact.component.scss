@@ -1,0 +1,49 @@
+@use "~src/styles/variables" as v;
+
+section {
+  background-color: white;
+  h2 {
+    color: v.$secColor;
+    @extend .header-font;
+  }
+}
+
+.horizontal-line {
+  width: 250px;
+  height: 5px;
+  background-color: v.$secColor;
+  border-radius: 5px;
+  margin: auto;
+  .star {
+    background-color: white;
+    padding: 0.5rem;
+    i {
+      color: v.$secColor;
+    }
+  }
+}
+form {
+  @extend .sec-font;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.form-control {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  width: 15%;
+  background-color: v.$mainColor;
+  color: white !important;
+  border: none;
+  &:hover {
+    background-color: #159a80;
+  }
+}

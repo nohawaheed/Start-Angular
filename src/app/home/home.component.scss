@@ -1,0 +1,27 @@
+@use "~src/styles/variables" as v;
+
+header {
+  background-color: v.$mainColor;
+  h1 {
+    @extend .header-font;
+  }
+  p {
+    @extend .sec-font;
+  }
+  img {
+    max-width: 250px;
+  }
+}
+
+//
+.horizontal-line {
+  width: 300px;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  .star {
+    background-color: v.$mainColor;
+    padding: 0.5rem;
+  }
+}

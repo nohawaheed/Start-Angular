@@ -1,0 +1,35 @@
+@use "~src/styles/variables" as v;
+
+nav {
+  background-color: v.$secColor;
+  a {
+    @extend .header-font;
+  }
+  li a {
+    color: white !important;
+    padding: 15px;
+    margin-left: 10px;
+
+    &:hover {
+      color: v.$mainColor !important;
+    }
+  }
+  li a.link-active {
+    color: white !important;
+    background-color: v.$mainColor;
+    border-radius: 5px;
+  }
+
+  span {
+    color: white;
+    @extend .header-font;
+  }
+
+  button {
+    background-color: v.$mainColor;
+    padding: 15px;
+  }
+}
+.navbar-toggler:focus {
+  box-shadow: unset !important;
+}

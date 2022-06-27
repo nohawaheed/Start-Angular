@@ -1,0 +1,55 @@
+@use "~src/styles/variables" as v;
+
+section {
+  background-color: white;
+  h2 {
+    color: v.$secColor;
+
+    @extend .header-font;
+  }
+}
+
+.horizontal-line {
+  width: 250px;
+  height: 5px;
+  background-color: v.$secColor;
+  border-radius: 5px;
+  margin: auto;
+  .star {
+    background-color: white;
+    padding: 0.5rem;
+    i {
+      color: v.$secColor;
+    }
+  }
+}
+
+.portfolio-container {
+  cursor: pointer;
+  &:hover .overlay {
+    opacity: 1;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 188, 156, 0.9);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+}
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.close-window-btn {
+  background-color: v.$mainColor;
+  color: white;
+}
+
+p {
+  @extend .sec-font;
+}

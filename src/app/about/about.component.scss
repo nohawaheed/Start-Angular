@@ -1,0 +1,24 @@
+@use "~src/styles/variables" as v;
+
+section {
+  background-color: v.$mainColor;
+  h2 {
+    @extend .header-font;
+  }
+}
+
+p {
+  @extend .sec-font;
+}
+
+.horizontal-line {
+  width: 250px;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  .star {
+    background-color: v.$mainColor;
+    padding: 0.5rem;
+  }
+}

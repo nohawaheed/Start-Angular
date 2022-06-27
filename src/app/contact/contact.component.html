@@ -1,0 +1,171 @@
+<section class="p-5">
+  <div class="container-fluid p-5">
+    <div class="text-center pt-4">
+      <h2 class="text-uppercase fw-bold display-5 py-4 m-auto">Contact Me</h2>
+      <div class="horizontal-line position-relative">
+        <div class="star position-absolute translate-middle start-50">
+          <i class="fa-solid fa-star star fs-2"></i>
+        </div>
+      </div>
+      <form (ngSubmit)="submitForm(contactUsForm)" [formGroup]="contactUsForm">
+        <div class="row flex-column align-items-center pt-5 col-md-8 mx-auto">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control border-0 mt-3"
+              id="floatingName"
+              placeholder="text"
+              formControlName="userName"
+            />
+            <label for="floatingName" class="text-muted fs-4 p-2">Name</label>
+            <div
+              *ngIf="
+                contactUsForm.get('userName')?.errors &&
+                contactUsForm.get('userName')?.touched
+              "
+              class="alert alert-danger"
+            >
+              <p
+                *ngIf="
+              contactUsForm.get('userName')?.errors?.['required']"
+                class="mb-0"
+              >
+                Name is required
+              </p>
+              <p
+                *ngIf="
+              contactUsForm.get('userName')?.errors?.['minlength']"
+                class="mb-0"
+              >
+                Name minLength is 3 characters
+              </p>
+              <p
+                *ngIf="
+              contactUsForm.get('userName')?.errors?.['maxlength']"
+                class="mb-0"
+              >
+                Name maxLength is 8 characters
+              </p>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control border-0 mt-3"
+              id="floatingEmail"
+              placeholder="name@example.com"
+              formControlName="userEmail"
+            />
+            <label for="floatingEmail" class="text-muted fs-4 p-2"
+              >Email Address</label
+            >
+            <div
+              *ngIf="
+                contactUsForm.get('userEmail')?.errors &&
+                contactUsForm.get('userEmail')?.touched
+              "
+              class="alert alert-danger"
+            >
+              <p
+                *ngIf="
+            contactUsForm.get('userEmail')?.errors?.['required']"
+                class="mb-0"
+              >
+                Email is required
+              </p>
+              <p
+                *ngIf="
+            contactUsForm.get('userEmail')?.errors?.['email']"
+                class="mb-0"
+              >
+                Please enter a valid email
+              </p>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control border-0 mt-3"
+              id="floatingPhone"
+              placeholder="phone"
+              formControlName="userPhone"
+            />
+            <label for="floatingPhone" class="text-muted fs-4 p-2"
+              >Phone Number</label
+            >
+            <div
+              *ngIf="
+                contactUsForm.get('userPhone')?.errors &&
+                contactUsForm.get('userPhone')?.touched
+              "
+              class="alert alert-danger"
+            >
+              <p
+                *ngIf="
+            contactUsForm.get('userPhone')?.errors?.['required']"
+                class="mb-0"
+              >
+                Phone no. is required
+              </p>
+              <p
+                *ngIf="
+            contactUsForm.get('userPhone')?.errors?.['pattern']"
+                class="mb-0"
+              >
+                Please enter a valid phone no.
+              </p>
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea
+              class="form-control border-0 mt-3"
+              placeholder="Message"
+              id="floatingTextarea"
+              style="height: 200px"
+              formControlName="userMessage"
+            ></textarea>
+            <label for="floatingTextarea" class="text-muted fs-4 p-2"
+              >Message</label
+            >
+            <div
+              *ngIf="
+                contactUsForm.get('userMessage')?.errors &&
+                contactUsForm.get('userMessage')?.touched
+              "
+              class="alert alert-danger"
+            >
+              <p
+                *ngIf="
+            contactUsForm.get('userMessage')?.errors?.['required']"
+                class="mb-0"
+              >
+                Please enter your message
+              </p>
+              <p
+                *ngIf="
+            contactUsForm.get('userMessage')?.errors?.['minlength']"
+                class="mb-0"
+              >
+                Message minLength is 50 characters
+              </p>
+              <p
+                *ngIf="
+            contactUsForm.get('userMessage')?.errors?.['maxlength']"
+                class="mb-0"
+              >
+                Message maxLength is 600 characters
+              </p>
+            </div>
+          </div>
+          <button
+            [disabled]="contactUsForm.invalid"
+            type="submit"
+            class="btn btn-lg align-self-start p-3 ms-2"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

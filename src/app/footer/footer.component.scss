@@ -1,0 +1,36 @@
+@use "~src/styles/variables" as v;
+
+footer {
+  background-color: v.$secColor;
+  .copyright {
+    background-color: #1a252f;
+  }
+}
+
+h4 {
+  @extend .header-font;
+}
+
+p {
+  @extend .sec-font;
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-left: 10px;
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    i {
+      color: v.$secColor;
+    }
+  }
+
+  i {
+    color: white;
+  }
+}
