@@ -1,4 +1,4 @@
-<section class="p-5">
+<section class="p-md-5">
   <div class="container-fluid p-5">
     <div class="text-center pt-4">
       <h2 class="text-uppercase fw-bold display-5 py-4 m-auto">Contact Me</h2>
@@ -8,7 +8,7 @@
         </div>
       </div>
       <form (ngSubmit)="submitForm(contactUsForm)" [formGroup]="contactUsForm">
-        <div class="row flex-column align-items-center pt-5 col-md-8 mx-auto">
+        <div class="row flex-column align-items-center pt-5 col-md-10 mx-auto">
           <div class="form-floating mb-3">
             <input
               type="text"
@@ -157,13 +157,15 @@
               </p>
             </div>
           </div>
-          <button
-            [disabled]="contactUsForm.invalid"
-            type="submit"
-            class="btn btn-lg align-self-start p-3 ms-2"
-          >
-            Send
-          </button>
+          <div class="d-flex justify-content-end">
+            <button
+              [disabled]="contactUsForm.invalid"
+              type="submit"
+              class="btn btn-lg"
+            >
+              Send
+            </button>
+          </div>
         </div>
       </form>
     </div>
